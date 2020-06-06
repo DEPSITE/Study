@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CODE</title>
+  <style>
+    *{margin:0; padding:0;}
+    h4{margin:10px;}
+    a{text-decoration: none;}
+    body
+    {
+      width:1400px; margin:0 auto; overflow:scroll; background: #e6e6e6;
+    }
+    #side-head
+    {
+      text-align: center;
+      width: 250px;
+      height: 1000px;
+      float:right;
+      background: white; margin:-20px 20px; padding:10px 20px;
+      border-radius: 5px; box-shadow: 0 2px 6px rgba(100,100, 100,0.3);
+    }
+    #content
+    {
+      margin:10px;
+      padding:0px;
+      border:1px solid;
+      height:750px;
+    }
+    #comment
+    {
+      text-align: center;
+      bottom: 0px;
+      height:200px;
+      border: 1px solid;
+    }
+    #login
+    {
+      border:1px solid;
+      float:right;
+    }
+    #mainpage
+    {
+      width:1000px; float:left;
+      height:1000px;
+      background: white; margin:30px 0; padding:10px 20px;
+      border-radius: 5px; box-shadow: 0 2px 6px rgba(100,100, 100,0.3);
+    }
+    li{list-style: none; margin:50px}
+    ul{list-style: none;}
+    #page-wrapper
+    {
+      background: white; margin:40px 0; padding:10px 20px;
+      border-radius: 5px; box-shadow: 0 2px 6px rgba(100,100, 100,0.3);
+    }
+    A:link{text-decoration:none; color:#646464}
+    A:visited{text-decoration:none; color:#646464}
+    A:active{text-decoration:none; color:#646464}
+    A:hover{text-decoration:none; color:#646464}
+    #main-header{overflow:hidden;}
+    .master-title{font-size: 5em; color:#181818; text-align: center;}
+    .master-description{font-size:2em; font-weight: 500; columns:#383838; text-align: center;}
+    .inner-menu{white-space: nowrap;}
+    #master{margin:50px; overflow: hidden;}
+    #algo-description{border:1px solid; width:auto; height:30%; text-align: center;}
+    #code-example{margin:20px; border:1px solid; float:left; width:45%; height:65%; text-align: center;}
+    #visualization{margin:20px; border:1px solid; float:right; width:45%; height:65%; text-align: center;}
+/* http://cgaja.com/useful_functions/1020 , 라디오 버튼으로 Tab 만들기. */
+.tabs
+{
+	position: relative;
+	clear: both;
+}
+.tabs .tab
+{
+  width:24%;
+	float: left;
+}
+.tabs .tab .content
+{
+	position: absolute;
+  overflow:scroll;
+  text-align: left;
+	background-color: white;
+	left: 0px;
+	width: 99%;
+  margin-top:5px;
+  height: 620px;
+	border: 1px #000 solid;
+}
+.checkboxtab
+{
+	display: none;
+}
+.tab label
+{
+  margin-right:0;
+}
+.checkboxtab:checked ~ label
+{
+	color: #ab70ff;
+	border: 1px #000 solid;
+}
+.checkboxtab:checked ~ .content
+{
+	z-index: 1;
+}
+#algo-description
+{
+  font-size: large;
+  overflow: scroll;
+}
+  </style>
+</head>
+<body>
+  <form>
+    <div id="page-wrapper">
+        <header id="main-header">
+          <hgroup id="master">
+            <h1 class="master-title">
+              <a href="Main Page.html">62CODE</a> 
+             </h1>
+             <h2 class="master-description">
+              <a href="Main Page.html">과제용 정렬알고리즘 사이트</a>
+             </h2>
+          </hgroup>
+          <div id="login">
+            <h4>
+              이름 : <input type = "text"> <br>
+             비밀번호 : <input type = "password"> <br>
+             <input type ="button" class="button" value="회원가입">
+             <input type ="button" class="button" value=" 로그인 ">
+            </h4>
+            </div>
+        </header>
+      <div id="mainpage">
+        <div id="algo-description">
+          <p>힙 정렬(Heap Sort)</p>
+          <br>
+          <p>힙 정렬은 완전 이진 트리를 기본으로 하는 힙(Heap) 자료구조를 기반으로한 정렬 방식이다.</p>
+          <p>완전 이진 트리는 삽입할 때 왼쪽부터 차례대로 추가하는 이진트리를 말한다.</p>
+          <p>힙에는 부모 노드의 값이 자식 노드의 값보다 항상 큰 최대 힙과 그 반대인 최소 힙이 존재한다.</p>
+          <br>
+          <p>힙 정렬은 힙 생성 알고리즘을 사용하는데, 특정한 노드의 두 자식 중에서 더 큰 자식과 자신의</p>
+          <p>위치를 바꾸는 알고리즘이다. 힙 정렬은 처음에 받아온 배열들의 값을 이진 트리에 삽입한다.</p>
+          <p>이진 트리에 값을 삽입하고 나면 힙 생성 알고리즘을 실행하게 되고, 제일 큰 값이</p>
+          <p>트리의 맨 위로 올라오게 된다. 그리고 그렇게 찾아진 제일 큰 값을 제일 아래쪽의 노드와 위치를 </p>
+          <p>바꾸고,그 위치에 고정시킨다. 이러한 방법으로 힙 생성 알고리즘을 정렬이 될 때 까지 반복한다.</p>
+          <br>
+          <p>힙 정렬은 추가적인 메모리를 필요로 하지 않으면서 항상 O(NlogN)이라는 시간 복잡도를 가지며</p>
+          <p>가장 큰 값 몇개만 필요할 때에 정말 유용하다. 단점은 데이터의 순서가 바뀌는 불안정한</p>
+          <p>(Unstable)정렬 이라는 것과, 데이터의 상태에 따라 다른 정렬 방법에 비해 느려진다는 점이 있다.</p>
+        </div>
+        <div id="code-example">
+          <div class="tabs">
+            <div class="tab">
+              <input name="checkbox-tabs-group" type="radio" id="checkbox1" class="checkboxtab" checked>
+              <label for="checkbox1">　C　</label>
+              <div class="content">
+
+              </div>
+            </div>
+            <div class="tab">
+              <input name="checkbox-tabs-group" type="radio" id="checkbox2" class="checkboxtab">
+              <label for="checkbox2">　C++　</label>
+              <div class="content">
+                This is the content of tab 2
+              </div>
+            </div>
+            <div class="tab">
+              <input name="checkbox-tabs-group" type="radio" id="checkbox3" class="checkboxtab">
+              <label for="checkbox3">　JAVA　</label>
+              <div class="content">
+                This is the content of tab 3
+              </div>
+            </div>
+            <div class="tab">
+              <input name="checkbox-tabs-group" type="radio" id="checkbox4" class="checkboxtab">
+              <label for="checkbox4">　PYTHON　</label>
+              <div class="content">
+                This is the content of tab 4
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="visualization">
+          <iframe width="450" height="325" src="https://www.youtube.com/embed/Xw2D9aJRBY4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="450" height="325" src="https://www.youtube.com/embed/_bkow6IykGM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div id="side-head">
+      <div id="content">
+      <h1>목차</h1>
+      <h4>
+      <ol class="inner-menu">
+        <li class="inner-menuitem"><a href="Bubble Sort.html">Bubble Sort</a></li>
+        <li class="inner-menuitem"><a href="Selection Sort.html">Selection Sort</a></li>
+        <li class="inner-menuitem"><a href="Insertion Sort.html">Insertion Sort</a></li>
+        <li class="inner-menuitem"><a href="Merge Sort.html">Merge Sort</a></li>
+        <li class="inner-menuitem"><a href="Heap Sort.html">▶ Heap Sort</a></li>
+        <li class="inner-menuitem"><a href="Quick Sort.html">Quick Sort</a></li>
+        <li class="inner-menuitem"><a href="Shell Sort.html">Shell Sort</a></li>
+        <li class="inner-menuitem"><a href="Cocktail Sort.html">Cocktail Sort</a></li>
+        <li class="inner-menuitem"><a href="Radix Sort.html">Radix Sort</a></li>
+      </ol>
+      </h4>
+      </div>
+      <div id="comment">
+      <h5>의견 보내기</h5> 
+      <textarea style="resize: none;" name="name" rows="8" cols="28"></textarea>
+      <input type ="submit" value="보내기"> 
+      </div>
+      <h5>Email:societe62@gmail.com</h5>
+      <h5>안동대학교 컴퓨터공학과 박성국</h5>
+    </div>
+  </form>
+</body>
+</html>

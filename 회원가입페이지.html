@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      fieldset{width:700px; border-radius: 20px;}
+      legend{font-size: 1.5em; font-weight:bold;}
+      .buttonShape{border:solid 2px #454545; border-radius: 10px;}
+    </style>
+  </head>
+<body>
+    <form>
+      <h1>회원가입</h1>
+    <fieldset>
+      <legend><h3>입력양식</h3></legend>
+      <table>
+          <tr>
+            <th>이름</th>
+            <td><input type="text" placeholder="예) 홍길동">
+            <input type="button" value="중복확인" class="buttonShape">
+          </td>
+          </tr>
+          <tr>
+            <th>아이디 </th>
+            <td><input type="text" placeholder="예) anu123"></td>
+          </tr>
+          <tr>
+            <th>이메일</th>
+            <td><input type="email" name="emailcheck" placeholder="예) anu123"> @
+              <input type="email" name="emailcheck" placeholder="예) naver.com"> 
+            </td>
+          </tr>
+          <tr>
+            <th>휴대폰 번호</th>
+            <td>
+              <select class="phoneNum">
+                    <option>010</option>
+                    <option>011</option>
+              </select>
+            - <input type="text" placeholder="0000">
+            - <input type="text" placeholder="0000">
+          </td>
+          </tr>
+          <tr>
+            <th>자기 소개</th>
+            <td><textarea name="name" rows="8" cols="80"></textarea></td>
+          </tr>
+          <tr>
+            <th>성별</th>
+            <td>
+              남<input type="radio" name="gender">
+              여<input type="radio" name="gender">
+            </td>
+          </tr>
+          <tr>
+            <th>프로필 사진</th>
+            <td><input type="file"></td>
+          </tr>
+          <tr>
+            <th>생년월일</th>
+            <td><input type="date" name="birth"></td>
+          </tr>
+          <tr>
+          </tr>
+      </table>
+      <input type ="submit" value="회원가입">
+    </fieldset>
+</form>
+</body>
+</html>
