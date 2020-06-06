@@ -156,28 +156,197 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox1" class="checkboxtab" checked>
               <label for="checkbox1">　C　</label>
               <div class="content">
-
+                <p>#include&lt;stdio.h&gt;</p>
+                <p>int getMax(int arr[], int n)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int mx = arr[0];</p>
+                <p>&nbsp; &nbsp; int i;</p>
+                <p>&nbsp; &nbsp; for (i = 1; i &lt; n; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (arr[i] &gt; mx)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mx = arr[i];</p>
+                <p>&nbsp; &nbsp; return mx;</p>
+                <p>}</p>
+                <p>void countSort(int arr[], int n, int exp)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int output[n];</p>
+                <p>&nbsp; &nbsp; int i, count[10] = { 0 };</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; n; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[(arr[i] / exp) % 10]++;</p>
+                <p>&nbsp; &nbsp; for (i = 1; i &lt; 10; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[i] += count[i - 1];</p>
+                <p>&nbsp; &nbsp; for (i = n - 1; i &gt;= 0; i--)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; output[count[(arr[i] / exp) % 10] - 1] = arr[i];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[(arr[i] / exp) % 10]--;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; n; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[i] = output[i];</p>
+                <p>}</p>
+                <p>void radixsort(int arr[], int n)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int m = getMax(arr, n);</p>
+                <p>&nbsp; &nbsp; int exp;</p>
+                <p>&nbsp; &nbsp; for (exp = 1; m / exp &gt; 0; exp *= 10)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; countSort(arr, n, exp);</p>
+                <p>}</p>
+                <p>void print(int arr[], int n)</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int i;</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; n; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;%d &quot;, arr[i]);</p>
+                <p>}</p>
+                <p>int main()&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int arr[] = { 170, 45, 75, 90, 802, 24, 2, 66 };</p>
+                <p>&nbsp; &nbsp; int n = sizeof(arr) / sizeof(arr[0]);</p>
+                <p>&nbsp; &nbsp; radixsort(arr, n);</p>
+                <p>&nbsp; &nbsp; print(arr, n);</p>
+                <p>&nbsp; &nbsp; return 0;</p>
+                <p>}</p>
+                <p>출처:https://www.sanfoundry.com/c-program-implement-radix-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox2" class="checkboxtab">
               <label for="checkbox2">　C++　</label>
               <div class="content">
-                This is the content of tab 2
+                <p>#include&lt;iostream&gt;&nbsp;</p>
+                <p>using namespace std;</p>
+                <p>int getMax(int arr[], int n)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int mx = arr[0];&nbsp;</p>
+                <p>&nbsp; &nbsp; for (int i = 1; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (arr[i] &gt; mx)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mx = arr[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; return mx;&nbsp;</p>
+                <p>}</p>
+                <p>void countSort(int arr[], int n, int exp)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int output[n];</p>
+                <p>&nbsp; &nbsp; int i, count[10] = {0};</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[ (arr[i]/exp)%10 ]++;</p>
+                <p>&nbsp; &nbsp; for (i = 1; i &lt; 10; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[i] += count[i - 1];</p>
+                <p>&nbsp; &nbsp; for (i = n - 1; i &gt;= 0; i--)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[ (arr[i]/exp)%10 ]--;&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[i] = output[i];&nbsp;</p>
+                <p>}</p>
+                <p>void radixsort(int arr[], int n)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int m = getMax(arr, n);</p>
+                <p>&nbsp; &nbsp; for (int exp = 1; m/exp &gt; 0; exp *= 10)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; countSort(arr, n, exp);&nbsp;</p>
+                <p>}</p>
+                <p>void print(int arr[], int n)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; for (int i = 0; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;&nbsp;</p>
+                <p>}</p>
+                <p>int main()&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int arr[] = {170, 45, 75, 90, 802, 24, 2, 66};&nbsp;</p>
+                <p>&nbsp; &nbsp; int n = sizeof(arr)/sizeof(arr[0]);&nbsp;</p>
+                <p>&nbsp; &nbsp; radixsort(arr, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; print(arr, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; return 0;&nbsp;</p>
+                <p>}</p>
+                <p>출처:https://www.geeksforgeeks.org/radix-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox3" class="checkboxtab">
               <label for="checkbox3">　JAVA　</label>
               <div class="content">
-                This is the content of tab 3
+                <p>import java.io.*;&nbsp;</p>
+                <p>import java.util.*;&nbsp;</p>
+                <p>class Radix&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; static int getMax(int arr[], int n)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int mx = arr[0];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i = 1; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (arr[i] &gt; mx)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mx = arr[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; return mx;&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; static void countSort(int arr[], int n, int exp)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int output[] = new int[n];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int i;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int count[] = new int[10];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; Arrays.fill(count,0);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (i = 0; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; count[ (arr[i]/exp)%10 ]++;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (i = 1; i &lt; 10; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; count[i] += count[i - 1];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (i = n - 1; i &gt;= 0; i--)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; count[ (arr[i]/exp)%10 ]--;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (i = 0; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[i] = output[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; static void radixsort(int arr[], int n)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int m = getMax(arr, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int exp = 1; m/exp &gt; 0; exp *= 10)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; countSort(arr, n, exp);&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; static void print(int arr[], int n)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i=0; i&lt;n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(arr[i]+&quot; &quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; public static void main (String[] args)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int arr[] = {170, 45, 75, 90, 802, 24, 2, 66};&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int n = arr.length;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; radixsort(arr, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; print(arr, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}</p>
+                <p>출처:https://www.geeksforgeeks.org/radix-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox4" class="checkboxtab">
               <label for="checkbox4">　PYTHON　</label>
               <div class="content">
-                This is the content of tab 4
+                <p>def countingSort(arr, exp1):&nbsp;</p>
+                <p>&nbsp; &nbsp; n = len(arr)</p>
+                <p>&nbsp; &nbsp; output = [0] * (n)</p>
+                <p>&nbsp; &nbsp; count = [0] * (10)</p>
+                <p>&nbsp; &nbsp; for i in range(0, n):&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; index = (arr[i]/exp1)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[ (index)%10 ] += 1</p>
+                <p>&nbsp; &nbsp; for i in range(1,10):&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[i] += count[i-1]</p>
+                <p>&nbsp; &nbsp; i = n-1</p>
+                <p>&nbsp; &nbsp; while i&gt;=0:&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; index = (arr[i]/exp1)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; output[ count[ (index)%10 ] - 1] = arr[i]&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; count[ (index)%10 ] -= 1</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; i -= 1</p>
+                <p>&nbsp; &nbsp; i = 0</p>
+                <p>&nbsp; &nbsp; for i in range(0,len(arr)):&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[i] = output[i]</p>
+                <p>def radixSort(arr):</p>
+                <p>&nbsp; &nbsp; max1 = max(arr)</p>
+                <p>&nbsp; &nbsp; exp = 1</p>
+                <p>&nbsp; &nbsp; while max1/exp &gt; 0:&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; countingSort(arr,exp)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; exp *= 10</p>
+                <p>arr = [ 170, 45, 75, 90, 802, 24, 2, 66]&nbsp;</p>
+                <p>radixSort(arr)&nbsp;</p>
+                <p>for i in range(len(arr)):&nbsp;</p>
+                <p>&nbsp; &nbsp; print(arr[i]),&nbsp;</p>
+                <p>출처:<a href="https://www.geeksforgeeks.org/radix-sort/">https://www.geeksforgeeks.org/radix-sort/</a>&nbsp;</p>
               </div>
             </div>
           </div>

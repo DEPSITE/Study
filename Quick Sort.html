@@ -151,28 +151,190 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox1" class="checkboxtab" checked>
               <label for="checkbox1">　C　</label>
               <div class="content">
-                
+                <p>#include&lt;stdio.h&gt;&nbsp;</p>
+                <p>void swap(int* a, int* b)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int t = *a;&nbsp;</p>
+                <p>&nbsp; &nbsp; *a = *b;&nbsp;</p>
+                <p>&nbsp; &nbsp; *b = t;&nbsp;</p>
+                <p>}&nbsp;</p>
+                <p>int partition (int arr[], int low, int high)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int pivot = arr[high];&nbsp;</p>
+                <p>&nbsp; &nbsp; int i = (low - 1);&nbsp;</p>
+                <p>&nbsp; &nbsp; for (int j = low; j &lt;= high- 1; j++)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (arr[j] &lt; pivot)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i++;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swap(&amp;arr[i], &amp;arr[j]);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; swap(&amp;arr[i + 1], &amp;arr[high]);&nbsp;</p>
+                <p>&nbsp; &nbsp; return (i + 1);&nbsp;</p>
+                <p>}&nbsp;</p>
+                <p>void quickSort(int arr[], int low, int high)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; if (low &lt; high)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int pi = partition(arr, low, high); &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; quickSort(arr, low, pi - 1);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; quickSort(arr, pi + 1, high);&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}</p>
+                <p>void printArray(int arr[], int size)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int i;&nbsp;</p>
+                <p>&nbsp; &nbsp; for (i=0; i &lt; size; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;%d &quot;, arr[i]);&nbsp;</p>
+                <p>&nbsp; &nbsp; printf(&quot;n&quot;);&nbsp;</p>
+                <p>}</p>
+                <p>int main()&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int arr[] = {10, 7, 8, 9, 1, 5};&nbsp;</p>
+                <p>&nbsp; &nbsp; int n = sizeof(arr)/sizeof(arr[0]);&nbsp;</p>
+                <p>&nbsp; &nbsp; quickSort(arr, 0, n-1);&nbsp;</p>
+                <p>&nbsp; &nbsp; printf(&quot;Sorted array: n&quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; printArray(arr, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; return 0;&nbsp;</p>
+                <p>}</p>
+                <p>출처:https://www.geeksforgeeks.org/quick-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox2" class="checkboxtab">
               <label for="checkbox2">　C++　</label>
               <div class="content">
-                This is the content of tab 2
+                <p>#include &lt;bits/stdc++.h&gt;&nbsp;</p>
+                <p>using namespace std; &nbsp;</p>
+                <p>void swap(int* a, int* b) &nbsp;</p>
+                <p>{ &nbsp;</p>
+                <p>&nbsp; &nbsp; int t = *a; &nbsp;</p>
+                <p>&nbsp; &nbsp; *a = *b; &nbsp;</p>
+                <p>&nbsp; &nbsp; *b = t; &nbsp;</p>
+                <p>}</p>
+                <p>int partition (int arr[], int low, int high) &nbsp;</p>
+                <p>{ &nbsp;</p>
+                <p>&nbsp; &nbsp; int pivot = arr[high];</p>
+                <p>&nbsp; &nbsp; int i = (low - 1);</p>
+                <p>&nbsp; &nbsp; for (int j = low; j &lt;= high - 1; j++) &nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (arr[j] &lt; pivot) &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; { &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i++;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swap(&amp;arr[i], &amp;arr[j]);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; } &nbsp;</p>
+                <p>&nbsp; &nbsp; } &nbsp;</p>
+                <p>&nbsp; &nbsp; swap(&amp;arr[i + 1], &amp;arr[high]); &nbsp;</p>
+                <p>&nbsp; &nbsp; return (i + 1); &nbsp;</p>
+                <p>}</p>
+                <p>void quickSort(int arr[], int low, int high) &nbsp;</p>
+                <p>{ &nbsp;</p>
+                <p>&nbsp; &nbsp; if (low &lt; high) &nbsp;</p>
+                <p>&nbsp; &nbsp; { &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int pi = partition(arr, low, high); &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; quickSort(arr, low, pi - 1); &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; quickSort(arr, pi + 1, high); &nbsp;</p>
+                <p>&nbsp; &nbsp; } &nbsp;</p>
+                <p>}</p>
+                <p>void printArray(int arr[], int size) &nbsp;</p>
+                <p>{ &nbsp;</p>
+                <p>&nbsp; &nbsp; int i; &nbsp;</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; size; i++) &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;; &nbsp;</p>
+                <p>&nbsp; &nbsp; cout &lt;&lt; endl; &nbsp;</p>
+                <p>}</p>
+                <p>int main() &nbsp;</p>
+                <p>{ &nbsp;</p>
+                <p>&nbsp; &nbsp; int arr[] = {10, 7, 8, 9, 1, 5}; &nbsp;</p>
+                <p>&nbsp; &nbsp; int n = sizeof(arr) / sizeof(arr[0]); &nbsp;</p>
+                <p>&nbsp; &nbsp; quickSort(arr, 0, n - 1); &nbsp;</p>
+                <p>&nbsp; &nbsp; cout &lt;&lt; &quot;Sorted array: \n&quot;; &nbsp;</p>
+                <p>&nbsp; &nbsp; printArray(arr, n); &nbsp;</p>
+                <p>&nbsp; &nbsp; return 0; &nbsp;</p>
+                <p>}</p>
+                <p>출처:https://www.geeksforgeeks.org/quick-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox3" class="checkboxtab">
               <label for="checkbox3">　JAVA　</label>
               <div class="content">
-                This is the content of tab 3
+                <p>class QuickSort&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int partition(int arr[], int low, int high)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int pivot = arr[high]; &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int i = (low-1);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int j=low; j&lt;high; j++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (arr[j] &lt; pivot)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i++;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int temp = arr[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[i] = arr[j];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[j] = temp;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int temp = arr[i+1];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[i+1] = arr[high];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[high] = temp;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; return i+1;&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; void sort(int arr[], int low, int high)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (low &lt; high)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int pi = partition(arr, low, high);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sort(arr, low, pi-1);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sort(arr, pi+1, high);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; static void printArray(int arr[])&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int n = arr.length;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i=0; i&lt;n; ++i)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(arr[i]+&quot; &quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; System.out.println();&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; public static void main(String args[])&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int arr[] = {10, 7, 8, 9, 1, 5};&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int n = arr.length;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; QuickSort ob = new QuickSort();&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; ob.sort(arr, 0, n-1);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;sorted array&quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printArray(arr);&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}</p>
+                <p>출처:https://www.geeksforgeeks.org/quick-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox4" class="checkboxtab">
               <label for="checkbox4">　PYTHON　</label>
               <div class="content">
-                This is the content of tab 4
+                <p>def partition(arr,low,high):&nbsp;</p>
+<p>&nbsp; &nbsp; i = ( low-1 )&nbsp;</p>
+<p>&nbsp; &nbsp; pivot = arr[high]</p>
+<p>&nbsp; &nbsp; for j in range(low , high):&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if &nbsp; arr[j] &lt; pivot:&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i = i+1&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[i],arr[j] = arr[j],arr[i]&nbsp;</p>
+<p>&nbsp; &nbsp; arr[i+1],arr[high] = arr[high],arr[i+1]&nbsp;</p>
+<p>&nbsp; &nbsp; return ( i+1 )&nbsp;</p>
+<p>def quickSort(arr,low,high):&nbsp;</p>
+<p>&nbsp; &nbsp; if low &lt; high:&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; pi = partition(arr,low,high)&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; quickSort(arr, low, pi-1)&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; quickSort(arr, pi+1, high)&nbsp;</p>
+<p>arr = [10, 7, 8, 9, 1, 5]&nbsp;</p>
+<p>n = len(arr)&nbsp;</p>
+<p>quickSort(arr,0,n-1)&nbsp;</p>
+<p>print (&quot;Sorted array is:&quot;)&nbsp;</p>
+<p>for i in range(n):&nbsp;</p>
+<p>&nbsp; &nbsp; print (&quot;%d&quot; %arr[i]),&nbsp;</p>
+                <p>출처:https://www.geeksforgeeks.org/quick-sort/</p>
               </div>
             </div>
           </div>

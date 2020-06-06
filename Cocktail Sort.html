@@ -151,28 +151,198 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox1" class="checkboxtab" checked>
               <label for="checkbox1">　C　</label>
               <div class="content">
-
+                <p>#include &nbsp;&lt;stdio.h&gt;</p>
+                <p>void swap(int *x, int *y)&nbsp;</p>
+                <p>{</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>if(x == y)</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>return;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>*x ^= *y;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>*y ^= *x;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>*x ^= *y;</p>
+                <p>}</p>
+                <p>void cocktailsort(int *a, size_t n)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; while(1)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; char flag;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int it, i;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; size_t start[2] = {1, n - 1},</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; end[2] = {n, 0},</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; inc[2] = {1, -1};</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for(it = 0; it &lt; 2; ++it)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>flag = 1;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>for(i = start[it]; i != end[it]; i += inc[it])</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; if(a[i - 1] &gt; a[i])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; &nbsp; &nbsp; swap(a + i - 1, a + i);</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; &nbsp; &nbsp; flag = 0;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; }</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; if(flag)</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>&nbsp; &nbsp; return;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>}</p>
+                <p>int main(void)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int a[] = { 5, -1, 101, -4, 0, 1, 8, 6, 2, 3 };</p>
+                <p>&nbsp; &nbsp; int i;</p>
+                <p>&nbsp; &nbsp; size_t n = sizeof(a)/sizeof(a[0]);</p>
+                <p>&nbsp; &nbsp; printf(&quot;Original Array:\n&quot;);</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; n; i++)</p>
+                <p>&nbsp; &nbsp; printf(&quot;%d%s&quot;, a[i], i == n - 1 ? &quot;\n&quot; : &quot; &quot;); &nbsp;</p>
+                <p>&nbsp; &nbsp; printf(&quot;\nSorted Array:\n&quot;);</p>
+                <p>&nbsp; &nbsp; cocktailsort(a, n);</p>
+                <p>&nbsp; &nbsp; for ( i = 0; i &lt; n; ++i) printf(&quot;%d &quot;, a[i]);</p>
+                <p>&nbsp; &nbsp; return 0;</p>
+                <p>}</p>
+                <p>출처:https://www.w3resource.com/c-programming-exercises/searching-and-sorting/c-search-and-sorting-exercise-15.php</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox2" class="checkboxtab">
               <label for="checkbox2">　C++　</label>
               <div class="content">
-                This is the content of tab 2
+                <p>#include &lt;bits/stdc++.h&gt;&nbsp;</p>
+                <p>using namespace std;&nbsp;</p>
+                <p>void CocktailSort(int a[], int n)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; bool swapped = true;&nbsp;</p>
+                <p>&nbsp; &nbsp; int start = 0;&nbsp;</p>
+                <p>&nbsp; &nbsp; int end = n - 1;&nbsp;</p>
+                <p>&nbsp; &nbsp; while (swapped)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; swapped = false;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i = start; i &lt; end; ++i)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (a[i] &gt; a[i + 1])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swap(a[i], a[i + 1]);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped = true;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (!swapped) break;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; swapped = false;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; --end;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i = end - 1; i &gt;= start; --i)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (a[i] &gt; a[i + 1])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swap(a[i], a[i + 1]);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped = true;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; ++start;&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}</p>
+                <p>void printArray(int a[], int n)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; for (int i = 0; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;%d &quot;, a[i]);&nbsp;</p>
+                <p>&nbsp; &nbsp; printf(&quot;\n&quot;);&nbsp;</p>
+                <p>}</p>
+                <p>int main()&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int arr[] = { 5, 1, 4, 2, 8, 0, 2 };&nbsp;</p>
+                <p>&nbsp; &nbsp; int n = sizeof(arr) / sizeof(arr[0]);&nbsp;</p>
+                <p>&nbsp; &nbsp; CocktailSort(a, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; printf(&quot;Sorted array :\n&quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; printArray(a, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; return 0;&nbsp;</p>
+                <p>}</p>
+                <p>출처:https://www.geeksforgeeks.org/cocktail-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox3" class="checkboxtab">
               <label for="checkbox3">　JAVA　</label>
               <div class="content">
-                This is the content of tab 3
+                <p>public class CocktailSort&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; void cocktailSort(int a[])&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; boolean swapped = true;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int start = 0;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int end = a.length;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; while (swapped == true)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped = false;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int i = start; i &lt; end - 1; ++i)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (a[i] &gt; a[i + 1])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int temp = a[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a[i] = a[i + 1];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a[i + 1] = temp;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped = true;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (swapped == false)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped = false;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; end = end - 1;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int i = end - 1; i &gt;= start; i--)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (a[i] &gt; a[i + 1])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int temp = a[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a[i] = a[i + 1];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a[i + 1] = temp;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped = true;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; start = start + 1;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; void printArray(int a[])&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int n = a.length;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; n; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(a[i] + &quot; &quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; System.out.println();&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; public static void main(String[] args)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; CocktailSort ob = new CocktailSort();&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int a[] = { 5, 1, 4, 2, 8, 0, 2 };&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; ob.cocktailSort(a);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Sorted array&quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; ob.printArray(a);&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}</p>
+                <p>출처:https://www.geeksforgeeks.org/cocktail-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox4" class="checkboxtab">
               <label for="checkbox4">　PYTHON　</label>
               <div class="content">
-                This is the content of tab 4
+                <p>def cocktailSort(a):&nbsp;</p>
+                <p>&nbsp; &nbsp; n = len(a)&nbsp;</p>
+                <p>&nbsp; &nbsp; swapped = True</p>
+                <p>&nbsp; &nbsp; start = 0</p>
+                <p>&nbsp; &nbsp; end = n-1</p>
+                <p>&nbsp; &nbsp; while (swapped == True):</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; swapped = False</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for i in range (start, end):&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (a[i] &gt; a[i + 1]) :&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a[i], a[i + 1]= a[i + 1], a[i]&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped = True</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (swapped == False):&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; swapped = False</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; end = end-1</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for i in range(end-1, start-1, -1):&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (a[i] &gt; a[i + 1]):&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a[i], a[i + 1] = a[i + 1], a[i]&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped = True</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; start = start + 1</p>
+                <p>a = [5, 1, 4, 2, 8, 0, 2]&nbsp;</p>
+                <p>cocktailSort(a)&nbsp;</p>
+                <p>print(&quot;Sorted array is:&quot;)&nbsp;</p>
+                <p>for i in range(len(a)):&nbsp;</p>
+                <p>&nbsp; &nbsp; print (&quot;% d&quot; % a[i]),</p>
+                <p>출처:https://www.geeksforgeeks.org/cocktail-sort/</p>
               </div>
             </div>
           </div>

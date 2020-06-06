@@ -157,21 +157,159 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox1" class="checkboxtab" checked>
               <label for="checkbox1">　C　</label>
               <div class="content">
-
+                <p>#include &lt;stdio.h&gt;</p>
+                <p>void swap(int *a, int *b)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; int temp = *a;</p>
+                <p>&nbsp; *a = *b;</p>
+                <p>&nbsp; *b = temp;</p>
+                <p>}</p>
+                <p>void heapify(int arr[], int n, int i)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; int largest = i;</p>
+                <p>&nbsp; int left = 2 * i + 1;</p>
+                <p>&nbsp; int right = 2 * i + 2;</p>
+                <p>&nbsp; if (left &lt; n &amp;&amp; arr[left] &gt; arr[largest])</p>
+                <p>&nbsp; &nbsp; largest = left;</p>
+                <p>&nbsp; if (right &lt; n &amp;&amp; arr[right] &gt; arr[largest])</p>
+                <p>&nbsp; &nbsp; largest = right;</p>
+                <p>&nbsp; if (largest != i)&nbsp;</p>
+                <p>&nbsp; {</p>
+                <p>&nbsp; &nbsp; swap(&amp;arr[i], &amp;arr[largest]);</p>
+                <p>&nbsp; &nbsp; heapify(arr, n, largest);</p>
+                <p>&nbsp; }</p>
+                <p>}</p>
+                <p>void heapSort(int arr[], int n)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; // Build max heap</p>
+                <p>&nbsp; for (int i = n / 2 - 1; i &gt;= 0; i--)</p>
+                <p>&nbsp; &nbsp; heapify(arr, n, i);</p>
+                <p>&nbsp; for (int i = n - 1; i &gt;= 0; i--)&nbsp;</p>
+                <p>&nbsp; {</p>
+                <p>&nbsp; &nbsp; swap(&amp;arr[0], &amp;arr[i]);</p>
+                <p>&nbsp; &nbsp; heapify(arr, i, 0);</p>
+                <p>&nbsp; }</p>
+                <p>}</p>
+                <p>void printArray(int arr[], int n)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; for (int i = 0; i &lt; n; ++i)</p>
+                <p>&nbsp; &nbsp; printf(&quot;%d &quot;, arr[i]);</p>
+                <p>&nbsp; printf(&quot;\n&quot;);</p>
+                <p>}</p>
+                <p>int main()&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; int arr[] = {1, 12, 9, 5, 6, 10};</p>
+                <p>&nbsp; int n = sizeof(arr) / sizeof(arr[0]);</p>
+                <p>&nbsp; heapSort(arr, n);</p>
+                <p>&nbsp; printf(&quot;Sorted array is \n&quot;);</p>
+                <p>&nbsp; printArray(arr, n);</p>
+                <p>}</p>
+                <p>출처:https://www.programiz.com/dsa/heap-sort</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox2" class="checkboxtab">
               <label for="checkbox2">　C++　</label>
               <div class="content">
-                This is the content of tab 2
+                <p>#include &lt;iostream&gt;&nbsp;</p>
+                <p>using namespace std;&nbsp;</p>
+                <p>void heapify(int arr[], int n, int i)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int largest = i;</p>
+                <p>&nbsp; &nbsp; int l = 2*i + 1;</p>
+                <p>&nbsp; &nbsp; int r = 2*i + 2;</p>
+                <p>&nbsp; &nbsp; if (l &lt; n &amp;&amp; arr[l] &gt; arr[largest])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; largest = l;&nbsp;</p>
+                <p>&nbsp; &nbsp; if (r &lt; n &amp;&amp; arr[r] &gt; arr[largest])&nbsp;</p>
+                <p>&nbsp; &nbsp; if (largest != i)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; swap(arr[i], arr[largest]);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; heapify(arr, n, largest);&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}</p>
+                <p>void heapSort(int arr[], int n)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; for (int i = n / 2 - 1; i &gt;= 0; i--)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; heapify(arr, n, i);&nbsp;</p>
+                <p>&nbsp; &nbsp; for (int i=n-1; i&gt;0; i--)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; swap(arr[0], arr[i]);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; heapify(arr, i, 0);&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}</p>
+                <p>void printArray(int arr[], int n)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; for (int i=0; i&lt;n; ++i)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;&nbsp;</p>
+                <p>&nbsp; &nbsp; cout &lt;&lt; &quot;\n&quot;;&nbsp;</p>
+                <p>}</p>
+                <p>int main()&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int arr[] = {12, 11, 13, 5, 6, 7};&nbsp;</p>
+                <p>&nbsp; &nbsp; int n = sizeof(arr)/sizeof(arr[0]);&nbsp;</p>
+                <p>&nbsp; &nbsp; heapSort(arr, n);&nbsp;</p>
+                <p>&nbsp; &nbsp; cout &lt;&lt; &quot;Sorted array is \n&quot;;&nbsp;</p>
+                <p>&nbsp; &nbsp; printArray(arr, n);&nbsp;</p>
+                <p>}</p>
+                <p>출처:<a href="https://www.geeksforgeeks.org/heap-sort/">https://www.geeksforgeeks.org/heap-sort/</a>&nbsp;</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox3" class="checkboxtab">
               <label for="checkbox3">　JAVA　</label>
               <div class="content">
-                This is the content of tab 3
+                <p>public class HeapSort&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; public void sort(int arr[])&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int n = arr.length;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i = n / 2 - 1; i &gt;= 0; i--)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heapify(arr, n, i);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i=n-1; i&gt;0; i--)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int temp = arr[0];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[0] = arr[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[i] = temp;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heapify(arr, i, 0);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; void heapify(int arr[], int n, int i)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int largest = i;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int l = 2*i + 1;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int r = 2*i + 2;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (l &lt; n &amp;&amp; arr[l] &gt; arr[largest])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; largest = l;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (r &lt; n &amp;&amp; arr[r] &gt; arr[largest])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; largest = r;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (largest != i)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int swap = arr[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[i] = arr[largest];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[largest] = swap;&nbsp;</p>
+                <p>&nbsp;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Recursively heapify the affected sub-tree&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heapify(arr, n, largest);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; static void printArray(int arr[])&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int n = arr.length;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i=0; i&lt;n; ++i)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(arr[i]+&quot; &quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; System.out.println();&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; public static void main(String args[])&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int arr[] = {12, 11, 13, 5, 6, 7};&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int n = arr.length;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; HeapSort ob = new HeapSort();&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; ob.sort(arr);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;Sorted array is&quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printArray(arr);&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}</p>
+                <p>출처:https://www.geeksforgeeks.org/heap-sort/</p>
               </div>
             </div>
             <div class="tab">

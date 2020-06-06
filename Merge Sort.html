@@ -279,7 +279,52 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox3" class="checkboxtab">
               <label for="checkbox3">　JAVA　</label>
               <div class="content">
-                This is the content of tab 3
+                <p>public class MergeSorter&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; public static void mergeSort(int[] arr)</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; sort(arr, 0, arr.length);</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; private static void sort(int[] arr, int low, int high)</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (high - low &lt; 2)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int mid = (low + high) / 2;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; sort(arr, 0, mid);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; sort(arr, mid, high);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; merge(arr, low, mid, high);</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; private static void merge(int[] arr, int low, int mid, int high)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int[] temp = new int[high - low];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int t = 0, l = low, h = mid;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; while (l &lt; mid &amp;&amp; h &lt; high)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (arr[l] &lt; arr[h])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp[t++] = arr[l++];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp[t++] = arr[h++];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; while (l &lt; mid)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp[t++] = arr[l++];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; while (h &lt; high)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp[t++] = arr[h++];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i = low; i &lt; high; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[i] = temp[i - low];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>}</p>
+                <p>출처:https://www.daleseo.com/sort-merge/</p>
+                <p><br></p>
               </div>
             </div>
             <div class="tab">
