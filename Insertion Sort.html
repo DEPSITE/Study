@@ -150,28 +150,139 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox1" class="checkboxtab" checked>
               <label for="checkbox1">　C　</label>
               <div class="content">
-
+                <p>#include &lt;stdio.h&gt;</p>
+                <p>int main()&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int list[5] = {7,2,5,4,1};</p>
+                <p>&nbsp; &nbsp; int i = 0, j = 0, k = 0, tmp = 0;</p>
+                <p>&nbsp; &nbsp; int len = 5; // 배열의 길이 - 1</p>
+                <p>&nbsp; &nbsp; for (i = 1; i &lt; len; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; tmp = list[i];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (k = 0; k &lt; len; k++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;%d &quot;, list[k]);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;\n&quot;);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (j = i ; j &gt; 0; j--)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (tmp &lt; list[j-1])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; list[j] = list[j-1]; &nbsp; &nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (k = 0; k &lt; len; k++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;%d &quot;, list[k]);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(&quot; &nbsp;tmp = %d\n&quot;, tmp);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;break\n&quot;);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; list[j] = tmp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (k = 0; k &lt; len; k++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;%d &quot;, list[k]);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;\n&quot;);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;\n&quot;);</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; printf(&quot;\n&quot;);</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; len; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;%d &quot;, list[i]);</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; printf(&quot;\n&quot;);</p>
+                <p>&nbsp; &nbsp; return 0;</p>
+                <p>}</p>
+                <p>출처:https://0902.tistory.com/31</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox2" class="checkboxtab">
               <label for="checkbox2">　C++　</label>
               <div class="content">
-                This is the content of tab 2
+                <p>#include&lt;iostream&gt;</p>
+                <p>using namespace std;</p>
+                <p>int main ()</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; int myarray[10] = { 12,4,3,1,15,45,33,21,10,2};</p>
+                <p>&nbsp; &nbsp; cout&lt;&lt;&quot;\nInput list is \n&quot;;</p>
+                <p>&nbsp; &nbsp; for(int i=0;i&lt;10;i++)</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt;myarray[i]&lt;&lt;&quot;\t&quot;;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; for(int k=1; k&lt;10; k++)</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int temp = myarray[k];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int j= k-1;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; while(j&gt;=0 &amp;&amp; temp &lt;= myarray[j])</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; myarray[j+1] = myarray[j];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; j = j-1;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; myarray[j+1] = temp;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; cout&lt;&lt;&quot;\nSorted list is \n&quot;;</p>
+                <p>&nbsp; &nbsp; for(int i=0;i&lt;10;i++)</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt;myarray[i]&lt;&lt;&quot;\t&quot;;</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>}</p>
+                <p>출처:https://www.softwaretestinghelp.com/insertion-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox3" class="checkboxtab">
               <label for="checkbox3">　JAVA　</label>
               <div class="content">
-                This is the content of tab 3
+                <p>public class InsertionSort</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; public static void main(String[] args)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int [] arr = {10, 2, 6, 4, 3, 7, 5};</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i = 1; i &lt; arr.length; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int standard = arr[i];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int aux = i - 1;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while (aux &gt;= 0 &amp;&amp; standard &lt; arr[aux])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[aux + 1] = arr[aux];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; aux--;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[aux + 1] = standard;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printArr(arr);</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; public static void printArr(int[] arr)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; arr.length; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(arr[i] + &quot; &quot;);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>}</p>
+                <p>출처:https://marobiana.tistory.com/85</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox4" class="checkboxtab">
               <label for="checkbox4">　PYTHON　</label>
               <div class="content">
-                This is the content of tab 4
+                <p>def insertion_sort(A):</p>
+                <p>&nbsp; &nbsp; for index in range(1,len(A)):</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; value = A[index]</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; i = index -1</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; while i &gt;= 0:</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if value &lt; A[i]:</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[i+1] = A[i]</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[i] = value</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i = i-1</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else:</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break</p>
+                <p>출처:친구</p>
               </div>
             </div>
           </div>

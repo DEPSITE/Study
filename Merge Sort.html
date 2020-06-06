@@ -158,14 +158,121 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox1" class="checkboxtab" checked>
               <label for="checkbox1">　C　</label>
               <div class="content">
-
+                <p>#include&lt;stdlib.h&gt;&nbsp;</p>
+                <p>#include&lt;stdio.h&gt;&nbsp;</p>
+                <p>void merge(int arr[], int l, int m, int r)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int i, j, k;&nbsp;</p>
+                <p>&nbsp; &nbsp; int n1 = m - l + 1;&nbsp;</p>
+                <p>&nbsp; &nbsp; int n2 = &nbsp;r - m;</p>
+                <p>&nbsp; &nbsp; int L[n1], R[n2];&nbsp;</p>
+                <p>&nbsp; &nbsp; for (i = 0; i &lt; n1; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; L[i] = arr[l + i];&nbsp;</p>
+                <p>&nbsp; &nbsp; for (j = 0; j &lt; n2; j++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; R[j] = arr[m + 1+ j];&nbsp;</p>
+                <p>&nbsp; &nbsp; while (i &lt; n1 &amp;&amp; j &lt; n2)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if (L[i] &lt;= R[j])&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[k] = L[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i++;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; else</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; arr[k] = R[j];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; j++;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; k++;&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; while (i &lt; n1)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[k] = L[i];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; i++;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; k++;&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>&nbsp; &nbsp; while (j &lt; n2)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[k] = R[j];&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; j++;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; k++;&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}&nbsp;</p>
+                <p>void mergeSort(int arr[], int l, int r)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; if (l &lt; r)&nbsp;</p>
+                <p>&nbsp; &nbsp; {&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int m = l+(r-l)/2;&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; mergeSort(arr, l, m);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; mergeSort(arr, m+1, r);&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; merge(arr, l, m, r);&nbsp;</p>
+                <p>&nbsp; &nbsp; }&nbsp;</p>
+                <p>}&nbsp;</p>
+                <p>void printArray(int A[], int size)&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int i;&nbsp;</p>
+                <p>&nbsp; &nbsp; for (i=0; i &lt; size; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; printf(&quot;%d &quot;, A[i]);&nbsp;</p>
+                <p>&nbsp; &nbsp; printf(&quot;\n&quot;);&nbsp;</p>
+                <p>}</p>
+                <p>int main()&nbsp;</p>
+                <p>{&nbsp;</p>
+                <p>&nbsp; &nbsp; int arr[] = {12, 11, 13, 5, 6, 7};&nbsp;</p>
+                <p>&nbsp; &nbsp; int arr_size = sizeof(arr)/sizeof(arr[0]);&nbsp;</p>
+                <p>&nbsp; &nbsp; printf(&quot;Given array is \n&quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; printArray(arr, arr_size);&nbsp;</p>
+                <p>&nbsp; &nbsp; mergeSort(arr, 0, arr_size - 1);&nbsp;</p>
+                <p>&nbsp; &nbsp; printf(&quot;\nSorted array is \n&quot;);&nbsp;</p>
+                <p>&nbsp; &nbsp; printArray(arr, arr_size);&nbsp;</p>
+                <p>&nbsp; &nbsp; return 0;&nbsp;</p>
+                <p>}&nbsp;</p>
+                <p>출처:https://www.geeksforgeeks.org/merge-sort/</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox2" class="checkboxtab">
               <label for="checkbox2">　C++　</label>
               <div class="content">
-                This is the content of tab 2
+                <p>#include&lt;iostream&gt;</p>
+                <p>using namespace std;</p>
+                <p>int N,arr[1000001];</p>
+                <p>int *arr2;</p>
+                <p>void merge(int left, int right)</p>
+                <p>{</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>int mid = (left + right) / 2;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>int i = left;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>int j = mid + 1;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>int k = left;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>while (i &lt;= mid &amp;&amp; j &lt;= right)</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>{</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>if (arr[i] &lt;= arr[j])&nbsp;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>arr2[k++] = arr[i++];&nbsp;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>else</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>arr2[k++] = arr[j++];</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>}</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>int tmp = i&gt;mid ? j : i;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>while(k&lt;=right) arr2[k++] = arr[tmp++];</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>for (int i=left;i&lt;=right;i++) arr[i] = arr2[i];</p>
+                <p>}</p>
+                <p>void partition(int left,int right)</p>
+                <p>{</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>int mid;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>if (left &lt; right)</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>{</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>mid = (left + right) / 2;&nbsp;</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>partition(left, mid);</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>partition(mid + 1, right);</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>merge(left, right);</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>}</p>
+                <p>}</p>
+                <p>int main()</p>
+                <p>{</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>scanf(&quot;%d&quot;,&amp;N);</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>arr2 = new int[N];</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>for (int i=0;i&lt;N;i++) scanf(&quot;%d&quot;,&amp;arr[i]);</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>partition(0, N - 1);</p>
+                <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>for (int i=0;i&lt;N;i++) printf(&quot;%d\n&quot;,arr[i]) ;</p>
+                <p>}</p>
+                <p>출처:https://dpdpwl.tistory.com/53</p>
               </div>
             </div>
             <div class="tab">
@@ -179,7 +286,33 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox4" class="checkboxtab">
               <label for="checkbox4">　PYTHON　</label>
               <div class="content">
-                This is the content of tab 4
+                <p>import sys</p>
+                <p>def merge(A,p,q,r):</p>
+                <p>&nbsp; &nbsp; n1 = q-p+1</p>
+                <p>&nbsp; &nbsp; n2 = r-q</p>
+                <p>&nbsp; &nbsp; L = [0]*(n1 + 1)</p>
+                <p>&nbsp; &nbsp; R = [0]*(n2 + 1)</p>
+                <p>&nbsp; &nbsp; for i in range(0, n1):</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; L[i] = A[p + i]</p>
+                <p>&nbsp; &nbsp; for j in range(0, n2):</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; R[j] = A[q + 1 + j]</p>
+                <p>&nbsp; &nbsp; L[n1] = float(sys.maxsize)</p>
+                <p>&nbsp; &nbsp; R[n2] = float(sys.maxsize)</p>
+                <p>&nbsp; &nbsp; i = j = 0</p>
+                <p>&nbsp; &nbsp; for k in range(p, r+1):</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; if L[i] &lt;= R[j]:</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[k] = L[i]</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i = i+1</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; else:</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[k] = R[j]</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; j = j+1</p>
+                <p>def merge_sort(A,p,r):</p>
+                <p>&nbsp; &nbsp; if p &lt; r:</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; q = (p+(r-1))//2</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; merge_sort(A,p,q)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; merge_sort(A,q+1,r)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; merge(A,p,q,r)</p>
+                <p>출처:친구</p>
               </div>
             </div>
           </div>

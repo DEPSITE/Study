@@ -188,21 +188,105 @@
               <input name="checkbox-tabs-group" type="radio" id="checkbox2" class="checkboxtab">
               <label for="checkbox2">　C++　</label>
               <div class="content">
-                This is the content of tab 2
+                <p>#include&lt;iostream&gt;</p>
+                <p>using namespace std;</p>
+                <p>void swapping(int &amp;a, int &amp;b)</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp;int temp;</p>
+                <p>&nbsp; &nbsp;temp = a;</p>
+                <p>&nbsp; &nbsp;a = b;</p>
+                <p>&nbsp; &nbsp;b = temp;</p>
+                <p>}</p>
+                <p>void display(int *array, int size)</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp;for(int i = 0; i&lt;size; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; cout &lt;&lt; array[i] &lt;&lt; &quot; &quot;;</p>
+                <p>&nbsp; &nbsp;cout &lt;&lt; endl;</p>
+                <p>}</p>
+                <p>void selectionSort(int *array, int size)&nbsp;</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp;int i, j, imin;</p>
+                <p>&nbsp; &nbsp;for(i = 0; i&lt;size-1; i++)&nbsp;</p>
+                <p>&nbsp; &nbsp;{</p>
+                <p>&nbsp; &nbsp; &nbsp; imin = i; &nbsp; //get index of minimum data</p>
+                <p>&nbsp; &nbsp; &nbsp; for(j = i+1; j&lt;size; j++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(array[j] &lt; array[imin]) &nbsp;imin = j;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;swap(array[i], array[imin]);</p>
+                <p>&nbsp; &nbsp;}</p>
+                <p>}</p>
+                <p>int main() {</p>
+                <p>&nbsp; &nbsp;int n;</p>
+                <p>&nbsp; &nbsp;cout &lt;&lt; &quot;Enter the number of elements: &quot;;</p>
+                <p>&nbsp; &nbsp;cin &gt;&gt; n;</p>
+                <p>&nbsp; &nbsp;int arr[n];</p>
+                <p>&nbsp; &nbsp;cout &lt;&lt; &quot;Enter elements:&quot; &lt;&lt; endl;</p>
+                <p>&nbsp; &nbsp;for(int i = 0; i&lt;n; i++) {</p>
+                <p>&nbsp; &nbsp; &nbsp; cin &gt;&gt; arr[i];</p>
+                <p>&nbsp; &nbsp;}</p>
+                <p>&nbsp; &nbsp;cout &lt;&lt; &quot;Array before Sorting: &quot;;</p>
+                <p>&nbsp; &nbsp;display(arr, n);</p>
+                <p>&nbsp; &nbsp;selectionSort(arr, n);</p>
+                <p>&nbsp; &nbsp;cout &lt;&lt; &quot;Array after Sorting: &quot;;</p>
+                <p>&nbsp; &nbsp;display(arr, n);</p>
+                <p>}</p>
+                <p>출처:https://www.tutorialspoint.com/cplusplus-program-to-implement-selection-sort</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox3" class="checkboxtab">
               <label for="checkbox3">　JAVA　</label>
               <div class="content">
-                This is the content of tab 3
+                <p>public class Selection</p>
+                <p>{</p>
+                <p>&nbsp; &nbsp; public void sort(int[] data)</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int size = data.length;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int min;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int temp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for(int i=0; i&lt;size-1; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min = i;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(int j=i+1; j&lt;size; j++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(data[min] &gt; data[j])</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min = j;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp = data[min];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data[min] = data[i];</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data[i] = temp;</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; public static void main(String[] args)&nbsp;</p>
+                <p>&nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; Selection selection = new Selection();</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; int data[] = {66, 10, 1, 99, 5};</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; selection.sort(data);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for(int i=0; i&lt;data.length; i++)</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(&quot;data[&quot;+i+&quot;] : &quot; + data[i]);</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+                <p>&nbsp; &nbsp; }</p>
+                <p>}</p>
+                <p>출처: https://hahahoho5915.tistory.com/7</p>
               </div>
             </div>
             <div class="tab">
               <input name="checkbox-tabs-group" type="radio" id="checkbox4" class="checkboxtab">
               <label for="checkbox4">　PYTHON　</label>
               <div class="content">
-                This is the content of tab 4
+                <p>def selection_sort(arr):</p>
+                <p>&nbsp; &nbsp; for i in range(len(arr)-1):</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; min_index = i</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; for k in range(i+1, len(arr)):</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if arr[k] &lt; arr[min_index]:</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min_index = k</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; tmp = arr[i]</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[i] = arr[min_index]</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; arr[min_index] = tmp</p>
+                <p>&nbsp; &nbsp; return arr</p>
+                <p>출처: https://excelsior-cjh.tistory.com/126</p>
               </div>
             </div>
           </div>
